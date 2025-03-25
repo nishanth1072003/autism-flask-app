@@ -1,0 +1,12 @@
+A Machine Learning Framework for Early-Stage Detection of Autism Spectrum Disorders
+
+Algorithm / Model Used: Random Forest Classifier.
+
+Accuracy Train Score: 100% and Test Score: 99%.
+*****************************************************
+Algorithm / Model Used: Decision Tree Classifier.
+
+Accuracy Train Score: 100% and Test Score: 96%.
+*****************************************************
+
+

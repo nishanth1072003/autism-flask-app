@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="../static/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="../static/assets/css/chart.css">
+    <link rel="stylesheet" href="../static/assets/css/owl.css">
+<!--
+
+Finance Business TemplateMo
+
+https://templatemo.com/tm-545-finance-business
+
+-->
+  </head>
+
+  <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+
+    
+    <header class="">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="{{url_for('index')}}"><h2> Autism Spectrum Disorders</h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="{{url_for('index')}}">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+              </li>  
+              <li class="nav-item">
+              </li>  
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('prediction')}}">Prediction</a>
+              </li>  
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('performance')}}">Performance Analysis</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('chart')}}">Chart</a>
+              </li> 
+              <li class="nav-item">
+              </li> 
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Page Content -->
+    <div class="page-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Chart</h1>
+            <span>Autism Spectrum Disorders</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+ 
+<br>
+<br>
+  
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Autism Spectrum  <em>Disorders</em></h2>
+              <span>Chart</span>
+            </div>
+          </div>
+   
+
+
+          <html>
+            <head>
+               <title>Google Charts Tutorial</title>
+               <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js">
+               </script>
+               <script type = "text/javascript">
+                  google.charts.load('current', {packages: ['corechart']});     
+               </script>
+            </head>
+            
+            <body>
+               <div id = "container" style = "width: 550px; height: 400px; margin: 0 auto">
+               </div>
+               <script language = "JavaScript">
+                  function drawChart() {
+                     // Define the chart to be drawn.
+                     var data = google.visualization.arrayToDataTable([
+                        ['Model', 'Accuracy_score'],
+                        ['RandomForestClassifier',  99],
+                        ['DecisionTree',  96]
+                      
+                     ]);
+         
+                     var options = {title: 'Accuracy_score'}; 
+         
+                     // Instantiate and draw the chart.
+                     var chart = new google.visualization.BarChart(document.getElementById('container'));
+                     chart.draw(data, options);
+                  }
+                  google.charts.setOnLoadCallback(drawChart);
+               </script>
+            </body>
+         </html>
+
+         <br>
+         <br>
+         
+
+          <head>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+              google.charts.load("current", {packages:["corechart"]});
+              google.charts.setOnLoadCallback(drawChart);
+              function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                  ['class', 'Hours per Day'],
+                  ['no',     70],
+                 
+                  ['yes',    30],
+            
+                ]);
+        
+                var options = {
+                  title: '',
+                  is3D: true,
+                };
+        
+                var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+                chart.draw(data, options);
+              }
+            
+            </script>
+          </head>
+    <center>      <body>
+           
+           
+       <div id="piechart_3d" style="width: 900px; height: 500px; "></div>
+           
+          </body></center>
+              
+
+
+
+        </div>
+      </div>
+
+
+     
+    <footer>
+      <div class="container">
+        <div class="row">
+           
+        </div>
+      </div>
+    </footer>
+    
+    <div class="sub-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+           
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../static/vendor/jquery/jquery.min.js"></script>
+    <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Additional Scripts -->
+    <script src="../static/assets/js/custom.js"></script>
+    <script src="../static/assets/js/owl.js"></script>
+    <script src="../static/assets/js/slick.js"></script>
+    <script src="../static/assets/js/accordions.js"></script>
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+
+  </body>
+</html>

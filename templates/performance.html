@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Background video style */
+    #bgVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.6;
+    }
+  
+    .content-container {
+      position: relative;
+      z-index: 1;
+      padding: 30px;
+      color: white;
+    }
+  
+    /* Optional: make all buttons look nice over video */
+    button {
+      background-color: rgba(0, 123, 255, 0.9);
+      border: none;
+      color: white;
+      padding: 10px 25px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 20px;
+    }
+  
+    button:hover {
+      background-color: rgba(0, 123, 255, 1);
+    }
+  </style>
+  
+    <!-- keep your meta, title, link tags if any -->
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="bgVideo">
+
+    <source src="{{ url_for('static', filename='performbg.mp4') }}" type="video/mp4">
+
+  </video>
+  <div class="content-container">
+    <!-- All your buttons, charts, and hidden sections go here -->  
+  </div>
+  
+
+  
+
+  <div style="text-align: center; margin-top: 50px;">
+    <button onclick="showComparisonChart()" style="padding: 10px 25px; font-size: 18px; background-color: #007bff; color: white; border: none; border-radius: 5px;">
+      Let's Compare Models
+    </button>
+    <div id="comparisonChart" style="display: none; text-align: center; margin-top: 30px;">
+      <h3 style="color: #333;">Model Comparison Chart</h3>
+      <img src="{{ url_for('static', filename='model_comparison_chart.png') }}" alt="Model Comparison Chart" style="width: 45%; border: 2px solid #ccc; border-radius: 10px;">
+    </div>
+    <div style="text-align: center; margin-top: 50px;">
+      <button onclick="toggleSHAP()" style="padding: 10px 25px; font-size: 18px; background-color: #007bff; color: white; border: none; border-radius: 5px;">
+        XGBoost Explainable AI - SHAP
+      </button>
+    </div>
+    <div id="shapSection" style="display: none; margin-top: 40px;" class="text-center">
+      <h2 style="color: #0a4275;">XGBoost Explainability AI - SHAP</h2>
+      <p style="font-size: 18px; margin-bottom: 40px;">
+          These visualizations explain how XGBoost decides if someone might have Autism, based on their answers. The graphs help show which questions were most important.
+
+      </p>
+  
+      <h4>1. Global Feature Importance (Summary Plot)</h4>
+      <p>This shows which questions (features) had the most impact across all predictions.</p>
+      <img src="{{ url_for('static', filename='summary.png') }}" alt="Summary Plot" style="max-width: 90%; height: auto; margin-bottom: 30px;">
+  
+      <h4>2. Individual Prediction Explanation (Waterfall Plot)</h4>
+      <p>This explains how the model made a decision for one specific person by showing what increased or decreased the prediction.</p>
+      <img src="{{ url_for('static', filename='waterfall.png') }}" alt="Waterfall Plot" style="max-width: 90%; height: auto; margin-bottom: 30px;">
+  
+      <h4>3. SHAP Beeswarm Plot</h4>
+      <p>Each dot is a person. Blue/pink shows their answer value, and the position shows how that answer affected their result.</p>
+      <img src="{{ url_for('static', filename='beeswarm.png') }}" alt="Beeswarm Plot" style="max-width: 90%; height: auto; margin-bottom: 40px;">
+  </div>
+  <div style="text-align: center; margin-top: 40px;">
+    <button onclick="showMetrics()" style="padding: 10px 25px; font-size: 18px; background-color: #28a745; color: white; border: none; border-radius: 5px;">
+      View XGBoost + SHAP Metrics
+    </button>
+  </div>
+  
+  <!-- Hidden Section for Image and Description -->
+  <div id="metricsSection" style="display: none; text-align: center; margin-top: 30px;">
+    <div style="max-width: 800px; margin: 20px auto; text-align: left; font-size: 16px;">
+      <p><strong>🔍 What This Table Shows:</strong></p>
+      <ul>
+        <li><strong>Feature Name:</strong> User-friendly description of the input question or behavior.</li>
+        <li><strong>SHAP Value:</strong> Quantifies how much that feature impacted the model’s decision (positive or negative).</li>
+        <li><strong>LIME Weight:</strong> Local explanation showing how the feature influenced this specific prediction.</li>
+        <li><strong>Model Importance:</strong> Aggregated importance from XGBoost showing how critical the feature is globally.</li>
+      </ul>
+    </div>
+    <img src="{{ url_for('static', filename='shapxgog.jpg') }}" alt="Explainable AI Metrics" style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
+  </div>
+  <div style="text-align: center; margin-top: 50px;">
+    <button onclick="showConclusion()" style="padding: 10px 25px; font-size: 18px; background-color: #dc3545; color: white; border: none; border-radius: 5px;">
+      Conclusion
+    </button>
+  </div>
+  
+  <!-- Hidden Conclusion Section -->
+  <div id="conclusionSection" style="display: none; max-width: 800px; margin: 30px auto; font-size: 16px; line-height: 1.7;">
+    <h3 style="color: #f6e710;">🔍Final Conclusion🔍</h3>
+  
+    <p><strong>Model Comparison:</strong></p>
+    <ul>
+      <li><strong>Random Forest:</strong> High accuracy and interpretability, but slightly slower and more complex ensemble logic.</li>
+      <li><strong>Decision Tree:</strong> Easy to understand but prone to overfitting and lower overall accuracy.</li>
+      <li><strong>XGBoost:</strong> Achieved the best performance in accuracy, speed, and stability. Also works well with SHAP and LIME for interpretability.</li>
+    </ul>
+  
+    <p><strong>✅ Final Choice:</strong> <span style="color: #d10f16;"><strong>XGBoost</strong></span> was selected as the final prediction model.</p>
+  
+    <p><strong>Reason:</strong> It provided the most reliable results and aligned best with explainable AI techniques like SHAP & LIME, helping both developers and non-technical users understand predictions clearly.</p>
+  
+    <p><strong>Use Case:</strong> Based on the input data, the system now outputs predictions from all 3 models, but the final interpretation and action can rely on XGBoost backed by explainable insights.</p>
+  </div>
+  
+    
+  
+  
+  <script>
+    function showComparisonChart() {
+      document.getElementById("comparisonChart").style.display = "block";
+    }
+    function toggleSHAP() {
+      var section = document.getElementById("shapSection");
+      section.style.display = (section.style.display === "none") ? "block" : "none";
+    }
+    function showMetrics() {
+    var section = document.getElementById("metricsSection");
+    section.style.display = section.style.display === "none" ? "block" : "none";
+    }
+    function showConclusion() {
+    var section = document.getElementById("conclusionSection");
+    section.style.display = section.style.display === "none" ? "block" : "none";
+  }
+  </script>
+  
+    <!-- ❌ remove existing performance content -->
+</body>
+</html>

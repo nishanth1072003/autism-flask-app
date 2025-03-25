@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title></title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="../static/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="../static/assets/css/performance.css">
+    <link rel="stylesheet" href="../static/assets/css/owl.css">
+<!--
+
+Finance Business TemplateMo
+
+https://templatemo.com/tm-545-finance-business
+
+-->
+<style>
+            
+                  
+            
+  h1 {
+      color:#141313;
+  }
+  td{
+color: #0cb4df;
+}
+
+option{
+  color: #2807e6; 
+}
+select{
+  color: #1407d4; 
+}
+input{
+  color: #070be6; 
+}
+</style>
+  </head>
+
+  <body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>  
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+
+    
+    <header class="">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="{{url_for('index')}}"><h2> Autism Spectrum Disorders</h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="{{url_for('index')}}">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+              </li>  
+              <li class="nav-item">
+              </li>  
+              <!--<li class="nav-item">
+                <a class="nav-link" href="{{ url_for('prediction') }}" style="color: rgb(10, 1, 1); font-weight: bold;">Prediction</a>
+
+              </li>  -->
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('performance')}}">performance Analysis</a>
+              </li> 
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Content -->
+    <div class="page-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 style="color: rgb(15, 235, 33);">Prediction</h1>
+            <span>Autism Spectrum Disorders</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+ 
+<br>
+<br>
+  
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Autism Spectrum  <em>Disorders</em></h2>
+              <span>Prediction</span>
+            </div>
+          </div>
+   
+
+             
+          <div class="col-lg-12" style="margin-left:-10px">
+				 
+            <form action="{{ url_for('predict')}}" method="POST">
+          <div class="section-title">
+       
+       
+              </div>
+                  <div class="scrollable">
+            
+                     <center>     <table> </center> 
+              <tbody>
+                          
+     
+                      <td>I often notice small sounds when others do not:</td>
+                              <td>
+                                  <input type="text" name="notice" method="post" required="required" placeholder="I often notice small sounds when others do not" height = '400' width="200" style="width: 200px"/>
+                                       
+                        
+                         
+                              </td>
+                      
+                      <td>I usually concentrate more on the whole picture, rather than the small details:</td>
+                              <td>
+                                  <input type="text" name="concentrate" method="post" required="required" placeholder="I usually concentrate more on the whole picture, rather than the small details" width="200" style="width: 200px"/>
+                                       
+                        
+                         
+                              </td>
+                  
+                  
+                   </tbody>
+                          <!-- Row 1 -->
+                          <tbody>
+                                 <td>I find it easy to do more than one thing at once:</td>
+                              <td>
+                                  <input type="text" name="easy" method="post" required="required" placeholder="I find it easy to do more than one thing at once" width="200" style="width: 200px"/>
+                                       
+                        
+                         
+                              </td>
+                      
+                      <td>If there is an interruption, I can switch back to what I was doing very quickly:</td>
+                              <td>
+                                  <input type="text" name="switch" method="post" required="required" placeholder="If there is an interruption, I can switch back to what I was doing very quickly" width="200" style="width: 200px"/>
+                                       
+                        
+                         
+                              </td>
+                  
+                  
+                          </tbody>
+           
+                          <!-- Row 2 -->
+                          <tbody>
+                                <td>I find it easy to ‘read between the lines’ when someone is talking to me:</td>
+                              <td>
+                                  <input type="text" name="read" method="post" required="required" placeholder="I find it easy to ‘read between the lines’ when someone is talking to me" width="200" style="width: 200px"/>
+                                       
+                        
+                         
+                              </td>
+                      
+                      <td>I know how to tell if someone listening to me is getting bored:</td>
+                              <td>
+                                  <input type="text" name="listening" method="post" required="required" placeholder="I know how to tell if someone listening to me is getting bored" width="200" style="width: 200px"/>
+                                       
+                        
+                         
+                              </td>
+                          </tbody>
+          
+                          <!-- Row 3 -->
+                          <tbody>
+                               <td>When I’m reading a story I find it difficult to work out the characters’ intentions:</td>
+                              <td>
+                                  <input type="text" name="difficult" method="post" required="required" placeholder="When I’m reading a story I find it difficult to work out the characters’ intentions" width="200" style="width: 200px"/>
+                                       
+                        
+                         
+                              </td>
+                      
+                      <td>I like to collect information about categories of things:</td>
+                              <td>
+                                  <input type="text" name="categories" method="post" required="required" placeholder="I like to collect information about categories of things"  width="200" style="width: 200px"/>
+                                       
+                        
+                         
+                              </td>
+                          </tbody>
+                          <!-- Row 4 --></br>
+                          <tbody>
+                              <td>I find it easy to work out what someone is thinking or feeling just by looking at their face:</td>
+                              <td>
+                                  <input type="text" name="face" method="post" required="required" placeholder="I find it easy to work out what someone is thinking or feeling just by looking at their face" width="200" style="width: 200px"/>
+                                       
+                        
+                         
+                              </td>
+                      
+                      <td>I find it difficult to work out people’s intentions:</td>
+                              <td>
+                                  <input type="text" name="people" method="post" required="required" placeholder="I find it difficult to work out people’s intentions" width="200" style="width: 200px"/>
+                                       
+                        
+                         
+                              </td>
+                          </tbody>
+                          <!-- Row 5 --></br>
+                          <tbody>
+                              <td>Age:</td>
+                              <td>
+                                  <input type="text" name="age" method="post" required="required" placeholder="age" width="200" style="width: 200px"/>
+                                       
+                        
+                         
+                              </td>
+               <td>Gender:</td>
+                              <td>
+                                    <select type="text" name="gender" method="post" required="required" placeholder="gender" width="200" style="width: 200px">
+                                         <option value="0">Female</option>
+                        <option value="1">Male</option> 
+                    
+                       
+                                  </select>
+                              </td> 
+                          </tbody>
+                              
+                           
+                               <tbody>
+                                  <td>Ethnicity:</td>
+                              <td>
+                                    <select type="text" name="ethnicity" method="post" required="required" placeholder="ethnicity" width="200" style="width: 200px">
+                                         <option value="0">White-European</option>
+                                         <option value="1">Latino</option> 
+										 <option value="2">Others</option>
+                                         <option value="3">Black</option>  
+										 <option value="4">Asian</option> 
+										 <option value="5">Middle Eastern</option> 
+										 <option value="6">Pasifika</option> 
+										 <option value="7">South Asian</option>
+                                         <option value="8">Hispanic</option>  
+										 <option value="9">Turkish</option> 
+										 
+                    
+                       
+                                  </select>
+                              </td> 
+							   <td>Jundice:</td>
+                              <td>
+                                    <select type="text" name="jundice" method="post" required="required" placeholder="jundice" width="200" style="width: 200px">
+                                         <option value="0">No</option>
+                        <option value="1">Yes</option> 
+                    
+                       
+                                  </select>
+                              </td> 
+                    
+                          </tbody>
+ 
+                          <tbody>
+                                  <td>Austim:</td>
+                              <td>
+                                    <select type="text" name="austim" method="post" required="required" placeholder="austim" width="200" style="width: 200px">
+                                         <option value="0">No</option>
+                                         <option value="1">Yes</option> 
+									 
+										 
+                    
+                       
+                                  </select>
+                              </td> 
+							   <td>Country_of_res:</td>
+                              <td>
+                                    <select type="text" name="contry_of_res" method="post" required="required" placeholder="contry_of_res" width="200" style="width: 200px">
+                                         <option value="0">United States</option>
+                                         <option value="1">Brazil</option> 
+										 <option value="2">Spain</option>
+                                         <option value="3">Egypt</option>  
+										 <option value="4">New Zealand</option> 
+										 <option value="5">Bahamas</option> 
+										 <option value="6">Burundi</option> 
+										 <option value="7">Austria</option>
+                                         <option value="8">Argentina</option>  
+										 <option value="9">Jordan</option> 
+										 <option value="0">Ireland</option>
+                                         <option value="11">United Arab Emirates</option> 
+										 <option value="12">Afghanistan</option>
+                                         <option value="13">Lebanon</option>  
+										 <option value="14">United Kingdom</option> 
+										 <option value="15">South Africa</option> 
+										 <option value="16">Italy</option> 
+										 <option value="17">Pakistan</option>
+                                         <option value="18">Bangladesh</option>  
+										 <option value="19">Chile</option> 
+										  <option value="20">France</option>
+                                         <option value="21">China</option> 
+										 <option value="22">Australia</option>
+                                         <option value="23">Canada</option>  
+										 <option value="24">Saudi Arabia</option> 
+										 <option value="25">Netherlands</option> 
+										 <option value="26">Romania</option> 
+										 <option value="27">Sweden</option>
+                                         <option value="28">Tonga</option>  
+										 <option value="29">Oman</option> 
+										 <option value="30">India</option>
+                                         <option value="31">Philippines</option> 
+										 <option value="32">Sri Lanka</option>
+                                         <option value="33">Sierra Leone</option>  
+										 <option value="34">Ethiopia</option> 
+										 <option value="35">Viet Nam</option> 
+										 <option value="36">Iran</option> 
+										 <option value="37">Costa Rica</option>
+                                         <option value="38">Germany</option>  
+										 <option value="39">Mexico</option> 
+                                          <option value="40">Russia</option>
+                                         <option value="41">Armenia</option> 
+										 <option value="42">Iceland</option>
+                                         <option value="43">Nicaragua</option>  
+										 <option value="44">Hong Kong</option> 
+										 <option value="45">Japan</option> 
+										 <option value="46">Ukraine</option> 
+										 <option value="47">Kazakhstan</option>
+                                         <option value="48">AmericanSamoa</option>  
+										 <option value="49">Uruguay</option> 
+										 <option value="50">Serbia</option>
+                                         <option value="51">Portugal</option> 
+										 <option value="52">Malaysia</option>
+                                         <option value="53">Ecuador</option>  
+										 <option value="54">Niger</option> 
+										 <option value="55">Belgium</option> 
+										 <option value="56">Bolivia</option> 
+										 <option value="57">Aruba</option>
+                                         <option value="58">Finland</option>  
+										 <option value="59">Turkey</option> 
+										  <option value="60">Nepal</option>
+                                         <option value="61">Indonesia</option> 
+										 <option value="62">Angola</option>
+                                         <option value="63">Azerbaijan</option>  
+										 <option value="64">Iraq</option> 
+										 <option value="65">Czech Republic</option> 
+										 <option value="66">Cyprus</option> 
+										 
+								
+                       
+                                  </select>
+                              </td> 
+                    
+                          </tbody>
+      
+        <tbody>
+                                  <td>used_app_before:</td>
+                              <td>
+                                    <select type="text" name="used_app_before" method="post" required="required" placeholder="used_app_before" width="200" style="width: 200px">
+                                         <option value="0">No</option>
+                                         <option value="1">Yes</option> 
+									
+										 
+                    
+                       
+                                  </select>
+                              </td> 
+							   <td>age_desc:</td>
+                              <td>
+                                    <select type="text" name="age_desc" method="post" required="required" placeholder="age_desc" width="200" style="width: 200px">
+                                         <option value="0">18 and more</option>
+                      
+                      
+                                  </select>
+                              </td> 
+                    
+                          </tbody>
+						  
+						   <tbody>
+                                  <td>relation:</td>
+                              <td>
+                                    <select type="text" name="relation" method="post" required="required" placeholder="relation" width="200" style="width: 200px">
+                                         <option value="0">Self</option>
+                                         <option value="1">Parent</option> 
+									     <option value="2">Others</option>
+                                         <option value="3">Health care professional</option> 
+										 <option value="4">Relative</option>
+                                     
+										 
+                    
+                       
+                                  </select>
+                              </td> 
+							    
+                    
+                          </tbody>
+                
+                      </table>
+              </br>
+              </br>
+                      <div class="center">
+                        <center>  <button type="submit" class="btn btn-primary ">Predict</button> </center> 
+                      </div>
+                  </div>
+              
+              </form>
+
+              
+              
+              {% if rf_result and dt_result and xgb_result %}
+              <div class="container mt-4">
+
+                <h4 class="text-center">Model Predictions</h4>
+                <table class="table table-bordered text-center">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Random Forest</th>
+                            <th>Decision Tree</th>
+                            <th>XGBoost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ rf_result }}</td>
+                            <td>{{ dt_result }}</td>
+                            <td>{{ xgb_result }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+            
+              </div>
+              
+         
+
+
+
+
+        </div>
+      </div>
+      <!--<h1>Prediction is:  {{ prediction_text }}</h1>-->
+<br>
+<br>
+     
+    <footer>
+      <div class="container">
+        <div class="row">
+           
+        </div>
+      </div>
+    </footer>
+    
+    <div class="sub-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+           
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../static/vendor/jquery/jquery.min.js"></script>
+    <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Additional Scripts -->
+    <script src="../static/assets/js/custom.js"></script>
+    <script src="../static/assets/js/owl.js"></script>
+    <script src="../static/assets/js/slick.js"></script>
+    <script src="../static/assets/js/accordions.js"></script>
+
+    <script language = "text/Javascript"> 
+      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+      function clearField(t){                   //declaring the array outside of the
+      if(! cleared[t.id]){                      // function makes it static and global
+          cleared[t.id] = 1;  // you could use true and false, but that's more typing
+          t.value='';         // with more chance of typos
+          t.style.color='#fff';
+          }
+      }
+    </script>
+
+  </body>
+</html>
